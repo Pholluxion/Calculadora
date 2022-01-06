@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
     <link href="https://fonts.googleapis.com/css2?family=Yuji+Hentaigana+Akari&display=swap" rel="stylesheet">
-    <link href="styles/index.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet">
 
 </head>
 <body>
@@ -15,43 +15,47 @@
         <div class="calculator">
             <div class="display">
 
-                <div id="answer-val">1000 </div>
-                <div id="operation-val">100 x 100</div>
+                <div id="answer-val" >0</div>
+                <div id="operation-val">= 0</div>
 
             </div>
+            <button class="function">sin</button>
+            <button class="function">cos</button>
+            <button class="function">tan</button>
+            <button class="operator"  onclick="insertOper(' ( ')">(</button>
+            <button class="operator"  onclick="insertOper(' ) ')">)</button>
             <button class="function">X<sup>y</sup></button>
-            <button class="function">lg</button>
-            <button class="function">ln</button>
-            <button class="operator">(</button>
-            <button class="operator">)</button>
-            <button class="function">&radic;x</button>
-            <button class="operator">AC</button>
+            <button class="operator" onclick="btnAC()">AC</button>
             <button class="operator">&larr;</button>
-            <button class="operator">%</button>
-            <button class="operator">/</button>
-            <button class="function">x!</button>
-            <button class="number">7</button>
-            <button class="number">8</button>
-            <button class="number">9</button>
-            <button class="operator">x</button>
-            <button class="function">1/x</button>
-            <button class="number">4</button>
-            <button class="number">5</button>
-            <button class="number">6</button>
-            <button class="operator">-</button>
-            <button class="const">&pi;</button>
-            <button class="number">1</button>
-            <button class="number">2</button>
-            <button class="number">3</button>
-            <button class="operator">+</button>
-            <button class="operator">&uarr;</button>
-            <button class="const">e</button>
-            <button class="number">0</button>
-            <button class="number">.</button>
-            <button class="operator" style="background-color: darkorange; color: white; border-radius: 48px;">=</button>
+            <button class="operator" onclick="insertOper(' % ')">%</button>
+            <button class="operator" onclick="insertOper(' / ')" >/</button>
+            <button class="function" onclick="insertOper(' ! ')" >x!</button>
+            <button class="number" onclick="insertNum(7)">7</button>
+            <button class="number" onclick="insertNum(8)">8</button>
+            <button class="number" onclick="insertNum(9)">9</button>
+            <button class="operator"  onclick="insertOper(' * ')">x</button>
+            <button class="function">&radic;x</button>
+            <button class="number" onclick="insertNum(4)">4</button>
+            <button class="number" onclick="insertNum(5)">5</button>
+            <button class="number" onclick="insertNum(6)">6</button>
+            <button class="operator" onclick="insertOper(' - ')">-</button>
+            <button class="function" onclick="insertOper('1/')">1/x</button>
+            <button class="number" onclick="insertNum(1)">1</button>
+            <button class="number" onclick="insertNum(2)">2</button>
+            <button class="number" onclick="insertNum(3)">3</button>
+            <button class="operator"  onclick="insertOper(' + ')">+</button>
+            <button class="const" onclick="insertNum('pi')">&pi;</button>
+            <button class="const" onclick="insertNum('e')">e</button>
+            <button class="number" onclick="insertNum(0)">0</button>
+            <button class="number" onclick="insertNum('.')">.</button>
+            <button class="operator" onclick="getAns()" style="background-color: darkorange; color: white; border-radius: 48px;">=</button>
 
         </div>
 
     </div>
+
+    <script src="js/jquery-3.6.0.min.js" ></script>
+    <script src="js/script.js" ></script>
+
 </body>
 </html>
