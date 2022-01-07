@@ -19,11 +19,11 @@ body{
 .calculator{
 
     display: grid;
-    grid-template-columns: repeat(5,80px);
-    grid-template-rows: 260px repeat(6,80px);
+    grid-template-columns: repeat(5,90px);
+    grid-template-rows: 260px repeat(6,90px);
     background-color: white;
-    padding: 10px;
-    border-radius: 10px;
+    padding: 30px;
+    border-radius: 20px;
 
 }
 
@@ -49,7 +49,7 @@ button:active{
 
 .display{
     grid-column: 1 /-1;
-    padding: 15px;
+    padding: 30px;
     display: flex;
     margin: 10px 10px 20px;
     flex-direction: column;
@@ -60,24 +60,27 @@ button:active{
     justify-content: space-evenly;
     word-break: break-all;
     font-size: 2em;
+    font-weight: lighter;
 
 }
 
 .operator{
-    font-weight: bold;
+    font-weight: lighter;
     font-size: 1.6em;
     color: darkorange;
 }
 
 .number{
     background-color: whitesmoke;
-    font-weight: 100;
+    font-weight: lighter;
 }
 
 .function{
-    font-weight: bolder;
+    font-weight: lighter;
 }
 
 .const{
     color: darkorange;
+    font-size: 1.8em;
+    font-weight: lighter;
 }
