@@ -33,7 +33,7 @@ function insertOper(op){
 
 }
 
-function insertSQRT(op){
+function insertFun(op){
 
     var value = $('#operation-val').text();
     cadena = value + op;
@@ -41,6 +41,7 @@ function insertSQRT(op){
     if(cadena.includes("=")){
 
         $('#operation-val').text("");
+        $('#operation-val').text(op);
 
 
     }else{
