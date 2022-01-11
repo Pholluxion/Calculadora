@@ -1,3 +1,4 @@
+
 *{
     font-family: 'Montserrat', cursive;
 }
@@ -25,6 +26,48 @@ body{
     padding: 30px;
     border-radius: 20px;
 
+}
+
+@media only screen and (max-width:768px){
+
+    .container{
+        margin-top: 1%;
+        margin-left: 5%;
+        margin-bottom: 5%;
+        margin-right: 5%;
+    }
+    .calculator{
+        display: flow-root;
+        height: 80%;
+        width: 80%;
+        font-size: 60%;
+        padding: auto;
+    }
+
+    .display{
+        display: flex;
+    }
+    .number{
+        width: 10%;
+        height: 10%;
+    }
+    .operator{
+        width: 10%;
+        height: 10%;
+    }
+    .function{
+        width: 10%;
+        height: 10%;
+    }
+    .const{
+        width: 10%;
+        height: 10%;
+    }
+    .operatorEq{
+        width: 10%;
+        height: 10%;
+    }
+  
 }
 
 button{
