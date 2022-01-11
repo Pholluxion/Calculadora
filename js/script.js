@@ -36,6 +36,7 @@ function insertOper(op){
 function insertFun(op){
 
     var value = $('#operation-val').text();
+    op = op + '(';
     cadena = value + op;
 
     if(cadena.includes("=")){
@@ -106,12 +107,23 @@ function getAns(){
     $('#operation-val').text( " = " + ans);
 }
 
-function del(){
+function btnDel(){
 
     var value = $('#operation-val').text();
-    var newVal =  value.slice(0,-1);
+    if(!value.includes("=")){
 
-    $('#operation-val').text(newVal);
+        var newVal =  value.slice(0,-1);
+
+        if(newVal == ""){
+
+            $('#operation-val').text("= 0");
+        
+        }else{
+
+            $('#operation-val').text(newVal);
+        
+        }
+    }
 }
 
 
@@ -125,3 +137,27 @@ function factorial(num) {
 function percentage(num) {
     return num/100;
 }
+
+$(".function").on("click",function(){
+    insertFun($(this).attr('id'));
+});
+
+$(".operator").on("click",function(){
+    insertOper($(this).attr('id'));
+});
+
+$(".operatorAC").on("click",function(){
+    btnAC();
+});
+
+$(".operatorDel").on("click",function(){
+    btnDel();
+});
+$(".operatorEq").on("click",function(){
+    getAns();
+});
+
+$(".number").on("click",function(){
+    insertNum($(this).attr('id'));
+});
+

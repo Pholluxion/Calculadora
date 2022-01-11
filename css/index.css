@@ -84,3 +84,9 @@ button:active{
     font-size: 1.8em;
     font-weight: lighter;
 }
+
+.operatorEq{
+    background-color: darkorange; 
+    color: white; 
+    border-radius: 48px;
+}
