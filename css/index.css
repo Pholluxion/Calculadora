@@ -28,44 +28,50 @@ body{
 
 }
 
-@media only screen and (max-width:768px){
+@media only screen and (max-width:1024px){
 
     .container{
-        margin-top: 1%;
+        margin-top: 5%;
         margin-left: 5%;
         margin-bottom: 5%;
         margin-right: 5%;
     }
     .calculator{
-        display: flow-root;
-        height: 80%;
-        width: 80%;
-        font-size: 60%;
-        padding: auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fill,20%);
+        grid-template-rows: 30% repeat(auto,20%);
+        /* height: 100%; */
+        width: 100%;
+        font-size: 80%;
+        padding: 2%;
+        margin-top: 2%;
+        margin-left: 5%;
+        margin-bottom: 5%;
+        margin-right: 5%;
     }
 
     .display{
         display: flex;
     }
     .number{
-        width: 10%;
-        height: 10%;
+        width: auto;
+        height: auto;
     }
     .operator{
-        width: 10%;
-        height: 10%;
+        width: auto;
+        height: auto;
     }
     .function{
-        width: 10%;
-        height: 10%;
+        width: auto;
+        height: auto;
     }
     .const{
-        width: 10%;
-        height: 10%;
+        width: auto;
+        height: auto;
     }
     .operatorEq{
-        width: 10%;
-        height: 10%;
+        width: auto;
+        height: auto;
     }
   
 }
