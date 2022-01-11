@@ -22,7 +22,9 @@ function insertOper(op){
 
     if(cadena.includes("=")){
 
-        $('#operation-val').text(cadena.replace("= ",""));
+        // $('#operation-val').text(cadena.replace("= ",""));
+        $('#operation-val').text("");
+        $('#operation-val').text(op);
 
 
     }else{
@@ -158,6 +160,10 @@ $(".operatorEq").on("click",function(){
 });
 
 $(".number").on("click",function(){
+    insertNum($(this).attr('id'));
+});
+
+$(".const").on("click",function(){
     insertNum($(this).attr('id'));
 });
 
