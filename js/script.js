@@ -38,18 +38,26 @@ function insertOper(op){
 function insertFun(op){
 
     var value = $('#operation-val').text();
-    op = op + '(';
+    
+    if(!op.includes('!')){
+        op = op + '(';
+    }
+    
     cadena = value + op;
+    // console.log(cadena);
+
 
     if(cadena.includes("=")){
 
         $('#operation-val').text("");
         $('#operation-val').text(op);
-
-
+        // console.log(cadena);
+        
+        
     }else{
-
+        
         $('#operation-val').text(cadena);
+        // console.log(cadena);
 
     }
 
@@ -76,35 +84,30 @@ function getAns(){
     var newValue2 = newValue2.replace("^","**");
     var newValue2 = newValue2.replace("sqrt","Math.sqrt");
 
+
     if(newValue2.includes("!")){
 
-        var newValue3 = newValue2.replace(/(\d+)!/g, (m, n) => factorial(+n));
-
-    }else{
-
-        var newValue3 = newValue2;
+        newValue2 = newValue2.replace(/(\d+)!/g, (m, n) => factorial(+n));
+        
     }
-
+    
     if(newValue2.includes("%")){
-
-        var newValue3 = newValue2.replace(/(\d+)%/g, (m, n) => percentage(+n));
-
-    }else{
-
-        var newValue3 = newValue2;
+        
+        newValue2 = newValue2.replace(/(\d+)%/g, (m, n) => percentage(+n));
+        
     }
-
     
     try{
-
-        ans = eval(newValue3);
+        
+        // console.log(newValue2);
+        ans = eval(newValue2);
         
     }catch(e){
         
+        console.log(e);
         ans = "syntax error";
 
     }
-
     $('#answer-val').text(value);
     $('#operation-val').text( " = " + ans);
 }
@@ -142,6 +145,7 @@ function percentage(num) {
 
 $(".function").on("click",function(){
     insertFun($(this).attr('id'));
+    // alert($(this).attr('id'));
 });
 
 $(".operator").on("click",function(){
