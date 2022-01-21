@@ -14,7 +14,7 @@ body{
     justify-content: center;
     align-items: center;
     height: 90%;
-    padding-top: 1%;
+    padding-top: 5%;
     padding-bottom: 1%;
 
 }
@@ -22,10 +22,11 @@ body{
 .calculator{
 
     display: grid;
-    grid-template-columns: repeat(5,80px);
-    grid-template-rows: 260px repeat(6,80px);
+    grid-template-columns: repeat(5,85px);
+    grid-template-rows: 260px repeat(6,85px);
     background-color: white;
     border-radius: 20px;
+    padding: 1%;
 
 
 }
