@@ -143,32 +143,70 @@ function percentage(num) {
     return num/100;
 }
 
-$(".function").on("click",function(){
-    insertFun($(this).attr('id'));
-    // alert($(this).attr('id'));
-});
+function  getTrivia() {
 
-$(".operator").on("click",function(){
-    insertOper($(this).attr('id'));
-});
+    const value = $('#operation-val').text();
+    const size  = $('#operation-val').css('fontSize',20); 
 
-$(".operatorAC").on("click",function(){
-    btnAC();
-});
+    const valoresAceptados = /^[0-9]+$/;
 
-$(".operatorDel").on("click",function(){
-    btnDel();
-});
-$(".operatorEq").on("click",function(){
-    getAns();
-});
+    if (value.match(valoresAceptados)){
+        $.ajax({
+        
+            type:"GET",
+            url: `http://numbersapi.com/${value}`,
+            success: function (data) {
+                    
+                  $('#operation-val').text(data);
+                 
+            }
+            ,
+            error: function (e) {
+                throw e;
+            }
+    
+        });
+    } else {
+        $('#operation-val').text("No se ha encontrado información");
+   }
 
-$(".number").on("click",function(){
-    insertNum($(this).attr('id'));
-});
 
-$(".const").on("click",function(){
-    insertNum($(this).attr('id'));
-});
 
-//TODO: Hacer petición usando JQuery y AJAX 
+
+}
+
+$( document ).ready(function() {
+
+    $(".function").on("click",function(){
+        insertFun($(this).attr('id'));
+        // alert($(this).attr('id'));
+    });
+    
+    $(".operator").on("click",function(){
+        insertOper($(this).attr('id'));
+    });
+    
+    $(".operatorAC").on("click",function(){
+        btnAC();
+    });
+    
+    $(".operatorDel").on("click",function(){
+        btnDel();
+    });
+    $(".operatorEq").on("click",function(){
+        getAns();
+    });
+    
+    $(".number").on("click",function(){
+        insertNum($(this).attr('id'));
+    });
+    
+    $(".const").on("click",function(){
+        insertNum($(this).attr('id'));
+    });
+    $(".request").on("click",function(){
+        getTrivia()
+    });
+  });
+
+// TODO: Hacer petición usando JQuery y AJAX 
